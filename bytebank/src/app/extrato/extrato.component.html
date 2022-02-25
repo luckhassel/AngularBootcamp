@@ -1,0 +1,11 @@
+<div *ngIf="transferencias?.length > 0; else listaVazia">
+  <div *ngFor="let transferencia of transferencias">
+    <p>Destino: {{transferencia?.data | date:'short'}}</p>
+    <p>Destino: {{transferencia?.destino}}</p>
+    <p>Valor: {{transferencia?.valor | currency}}</p>
+  </div>
+</div>
+
+<ng-template #listaVazia>
+  Nenhuma transferência encontrada
+</ng-template>
